@@ -46,4 +46,35 @@
         6 -> 3 values.
         7 -> 1 value.
         9 -> 2 values.
-*/
+*#include <stdio.h>
+
+int main() {
+    int N;
+    printf("Input N: ");
+    scanf("%d", &N);
+
+    // สร้างอาเรย์เพื่อเก็บข้อมูล
+    int data[N];
+
+    // รับข้อมูลจากผู้ใช้และเก็บลงในอาเรย์
+    for (int i = 0; i < N; i++) {
+        printf("Element[%d] : ", i);
+        scanf("%d", &data[i]);
+    }
+
+    // สร้างตัวแปรเพื่อนับจำนวนครั้งที่ข้อมูลซ้ำกัน
+    int count_dict[1000] = {0};
+
+    for (int i = 0; i < N; i++) {
+        count_dict[data[i]]++;
+    }
+
+    // แสดงผลลัพธ์
+    for (int i = 0; i < 1000; i++) {
+        if (count_dict[i] > 0) {
+            printf("%d -> %d value.\n", i, count_dict[i]);
+        }
+    }
+
+    return 0;
+}
