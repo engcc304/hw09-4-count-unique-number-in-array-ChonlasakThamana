@@ -46,7 +46,7 @@
         6 -> 3 values.
         7 -> 1 value.
         9 -> 2 values.
-*/#include <stdio.h>
+*#include <stdio.h>
 
 int main() {
     int N;
